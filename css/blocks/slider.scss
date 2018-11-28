@@ -1,0 +1,414 @@
+.burgers {
+  background: linear-gradient($yellow, #ea8e37, $yellow);
+  background-size: cover;
+
+  .section__title {
+    @include tablets {
+      text-align: center;
+    }
+  }
+}
+
+.burgers__container {
+  padding: 0;
+}
+
+.burgers__item {
+  padding: 0 rem(4px);
+  position: relative;
+}
+
+.burgers__arrow {
+  fill: #fff;
+  width: rem(27px);
+  height: rem(14px);
+  cursor: pointer;
+
+  &-left {
+    transform: rotate(90deg);
+  }
+
+  &-right {
+    transform: rotate(-90deg);
+  }
+}
+
+.burgers__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  @include tablets {
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+  }
+}
+
+.burgers__content-block {
+  width: 49%;
+  position: relative;
+
+  .burgers__menu-btn:hover {
+    & + .burgers-compos {
+      opacity: 1;
+    }
+
+    @include tablets {
+      & + .burgers-compos {
+        opacity: 0;
+      }
+    }
+  }
+
+  .burgers-compos:hover {
+    opacity: 1;
+  }
+
+  @include tablets {
+    width: auto;
+  }
+
+  @include phones {
+    margin: 0;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.burgers__content-block--burger {
+  @include tablets {
+    padding: 0 2%;
+  }
+}
+
+.burgers__menu-btn {
+  cursor: pointer;
+  z-index: 10;
+  position: absolute;
+  border-radius: rem(4px);
+  left: 0;
+  top: 0;
+  width: rem(90px);
+  height: rem(90px);
+  background-color: #f08c33;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: 0.3s;
+
+  @include tablets {
+    &:hover {
+      background-color: #f08c33;
+    }
+  }
+}
+
+.burgers-compos {
+  position: relative;
+  top: 0;
+  left: rem(90px);
+  position: absolute;
+  width: 59%;
+  border-radius: rem(4px);
+  background-color: rgba(255, 255, 255, 0.9);
+  opacity: 0;
+  transition: 0.3s;
+  padding: rem(20px) rem(21px);
+
+  @include tablets {
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    top: 0;
+    left: rem(90px);
+    padding: rem(13px) rem(18px);
+    min-width: rem(245px);
+  }
+}
+
+.burgers__menu-svg {
+  fill: #fff;
+  width: rem(46px);
+  height: rem(44px);
+}
+
+.burgers__menu-title {
+  margin-top: rem(5px);
+  color: #fff;
+  font-size: rem(14px);
+  @include gagalin();
+  margin-bottom: rem(-7px);
+}
+
+.burgers-compos__list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.burgers-compos__item {
+  margin-bottom: rem(7.5px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: rem(14px);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.burgers-compos__img {
+  width: rem(43px);
+  height: rem(43px);
+
+  &_beef {
+    fill: $orange;
+  }
+
+  &_buns {
+    fill: $yellow;
+  }
+
+  &_salad {
+    fill: $green;
+  }
+
+  &_sauce {
+    fill: $orange;
+  }
+
+  &_cucumber {
+    fill: $green;
+  }
+
+  &_cheese {
+    fill: $yellow;
+  }
+}
+
+.burgers-compos__title {
+  margin-left: rem(26px);
+  font-weight: 500;
+}
+
+.burgers-compos__weight {
+  flex: 1;
+  font-weight: 300;
+  text-align: right;
+}
+
+.burgers-compos__close {
+  display: none;
+
+  @include tablets {
+    position: absolute;
+    top: rem(5px);
+    right: rem(5px);
+    display: block;
+  }
+}
+
+.burgers__hero {
+  padding: 17% 0;
+  text-align: center;
+
+  @include tablets {
+    padding: rem(75px) 0 0 0;
+  }
+
+  @include phones {
+    width: 84%;
+    padding: rem(100px) 0 0 0;
+  }
+}
+
+.burgers__hero-title {
+  color: rgba(255, 255, 255, 0.5);
+  @include gagalin();
+  position: absolute;
+}
+
+.burgers__hero-title--top {
+  bottom: rem(27px);
+  font-size: rem(20px);
+  left: rem(14px);
+
+  @include tablets {
+    bottom: inherit;
+    left: inherit;
+    top: rem(25px);
+    right: rem(11px);
+  }
+
+  @include phones {
+    right: rem(12px);
+  }
+}
+
+.burgers__hero-title--bottom {
+  left: rem(16px);
+  bottom: 0;
+  font-size: rem(14px);
+  text-transform: uppercase;
+
+  @include tablets {
+    top: rem(61px);
+    right: rem(13px);
+    bottom: inherit;
+    left: inherit;
+  }
+
+  @include phones {
+    right: rem(12px);
+  }
+}
+
+.burgers__kkal-svg {
+  height: rem(60px);
+  width: rem(60px);
+  position: absolute;
+  left: 0;
+  bottom: rem(20px);
+  fill: rgba(255, 255, 255, 0.5);
+
+  @include tablets {
+    top: 0;
+    right: 0;
+    bottom: inherit;
+    left: inherit;
+  }
+
+  @include phones {
+    right: 0;
+  }
+}
+
+.burgers__desc {
+  line-height: rem(24px);
+  font-size: rem(14px);
+  font-weight: 300;
+  color: #fff;
+
+  @include tablets {
+    text-align: center;
+    margin-bottom: rem(16px);
+  }
+
+  @include phones {
+    margin-bottom: 0;
+  }
+}
+
+.burgers__order {
+  display: flex;
+  margin-bottom: rem(6px);
+  margin-top: rem(2px);
+
+  @include tablets {
+    justify-content: flex-end;
+    padding: rem(3px) 0;
+  }
+
+  @include phones {
+    padding: 0;
+  }
+}
+
+.burgers__order-block {
+  width: 50%;
+
+  @include tablets {
+    text-align: right;
+    width: 43%;
+  }
+
+  @include phones {
+    text-align: right;
+    width: 47%;
+  }
+}
+
+.burgers__order-block--btn {
+  padding-bottom: rem(12px);
+  display: flex;
+  align-items: flex-end;
+
+  @include tablets {
+    justify-content: flex-start;
+    padding-left: rem(28px);
+    width: 43%;
+  }
+
+  @include phones {
+    width: 47%;
+    padding-bottom: rem(13px);
+    padding-left: rem(28px);
+  }
+}
+
+.burgers__order-block--price {
+  @include tablets {
+    width: 50%;
+  }
+
+  @include phones {
+    width: 50%;
+    padding-top: rem(8px);
+  }
+}
+
+.burgers__order-text {
+  color: $orange;
+  @include gagalin();
+}
+
+.burgers__order-text--big {
+  font-size: rem(72px);
+
+  @include phones {
+    font-size: rem(50px);
+  }
+}
+
+.burgers__order-text--little {
+  font-size: rem(30px);
+
+  @include phones {
+    font-size: rem(24px);
+  }
+}
+
+.owl-carousel .owl-stage {
+  display: flex;
+  align-items: center;
+}
+
+.owl-nav {
+  .owl-next,
+  .owl-prev {
+    position: absolute;
+    transform: translateX(-50%);
+    top: 50%;
+  }
+  .owl-prev {
+    left: rem(-10px);
+
+    @include tablets {
+      left: 0;
+    }
+  }
+
+  .owl-next {
+    right: rem(-35px);
+
+    @include tablets {
+      right: 0;
+    }
+  }
+}

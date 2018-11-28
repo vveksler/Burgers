@@ -1,0 +1,14 @@
+.vscode/
+.sass-cache/
+prepros.cfg
+css/main.css
+css/main.css.map
+css/vendors.min.css
+/node_modules/
+/dist/
+/.git/
+/app/css/
+/**/_backstage
+/**/package-lock.json
+/**/Thumbs.db
+/**/*.DS_Store
