@@ -1,9 +1,9 @@
 // FULL PAGE
 let isScroll = true;
 const phones = {
-    width: 480,
-    heigth: 800
-  },
+  width: 480,
+  heigth: 800
+},
   tablets = {
     width: 768,
     heigth: 1024
@@ -40,7 +40,7 @@ $("#fullpage").fullpage({
   fitToSection: false,
   fitToSectionDelay: 200,
 
-  afterResize: function() {
+  afterResize: function () {
     checkDevice();
   }
 });
@@ -55,7 +55,7 @@ function checkDevice() {
   isScroll =
     ($(window).width() > desktops.width &&
       $(window).height() < desktops.heigth) ||
-    (media_(desktops) || media_(tablets) || media_(phones))
+      (media_(desktops) || media_(tablets) || media_(phones))
       ? false
       : true;
 
@@ -65,7 +65,7 @@ function checkDevice() {
 $("#fp-nav").removeAttr("style");
 
 checkDevice();
-$(window).resize(function() {
+$(window).resize(function () {
   checkDevice();
 });
 
@@ -170,7 +170,7 @@ $(".player__splash").on("click", e => {
   player.playVideo();
 });
 
-$(".player__volume-button").on("click", function() {
+$(".player__volume-button").on("click", function () {
   var mute_toggle = $(this);
 
   if (player.isMuted()) {
@@ -268,7 +268,7 @@ function init() {
 }
 
 // ACORDION SECTION TEAM
-$(".team-acco__trigger").on("click", function(e) {
+$(".team-acco__trigger").on("click", function (e) {
   e.preventDefault();
   const thisItem = this.parentNode;
   const thisPanel = this.nextElementSibling;
@@ -319,6 +319,7 @@ $(".nav__link").on("click", e => {
   }, 1300);
 });
 
+// Slider settings
 $(".owl-carousel").owlCarousel({
   items: 1,
   smartSpeed: 600,
@@ -330,35 +331,29 @@ $(".owl-carousel").owlCarousel({
   ]
 });
 
-// Slider menu on hover
-const checkPossition = () =>
-  window.matchMedia(`(min-width: ${tablets.width}px)`).matches;
-
+// Slider menu on hover & click
+const checkPossition = () => window.matchMedia(`(min-width: ${tablets.width}px)`).matches;
 if (checkPossition()) {
-  $(".burgers__menu-btn")
-    .mouseenter(e => {
-      const this_ = e.currentTarget;
-      $(this_).css("background-color", "#e45028");
-    })
-    .mouseleave(e => {
-      const this_ = e.currentTarget;
-      $(this_).css("background-color", "#f08c33");
-    });
-
   $(".burgers-compos")
     .mouseenter(e => {
       $(".burgers__menu-btn").css("background-color", "#e45028");
     })
     .mouseleave(e => {
-      $(".burgers__menu-btn").css("background-color", "#f08c33");
+      $(".burgers__menu-btn").removeAttr('style');
     });
 } else {
   $(".burgers__menu-btn").on("click", e => {
     const _target = e.currentTarget;
+    $(_target).css("background-color", "#e45028");
     const _composition = $(_target)
       .closest(".burgers__item")
       .find(".burgers-compos")
-      .toggle()
-      .css({ opacity: "1" });
+      .css({ display: 'flex' });
   });
+  $('.burgers-compos__close').on('click', e => {
+    e.preventDefault();
+    const _target = e.currentTarget;
+    $(_target).closest(".burgers-compos").fadeOut('fast');
+    $(_target).closest(".burgers__item").find('.burgers__menu-btn').css("background-color", "#f08c33")
+  })
 }

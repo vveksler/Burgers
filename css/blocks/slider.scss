@@ -1,7 +1,9 @@
 .burgers {
   background: linear-gradient($yellow, #ea8e37, $yellow);
   background-size: cover;
-
+  .container {
+    width: 100%;
+  }
   .section__title {
     @include tablets {
       text-align: center;
@@ -50,22 +52,6 @@
   width: 49%;
   position: relative;
 
-  .burgers__menu-btn:hover {
-    & + .burgers-compos {
-      opacity: 1;
-    }
-
-    @include tablets {
-      & + .burgers-compos {
-        opacity: 0;
-      }
-    }
-  }
-
-  .burgers-compos:hover {
-    opacity: 1;
-  }
-
   @include tablets {
     width: auto;
   }
@@ -101,6 +87,20 @@
   flex-direction: column;
   transition: 0.3s;
 
+  &:hover {
+    background-color: $orange;
+
+    & + .burgers-compos {
+      display: flex;
+    }
+
+    @include tablets {
+      & + .burgers-compos {
+        display: none;
+      }
+    }
+  }
+
   @include tablets {
     &:hover {
       background-color: #f08c33;
@@ -110,18 +110,22 @@
 
 .burgers-compos {
   position: relative;
+  z-index: 100;
+  display: none;
   top: 0;
   left: rem(90px);
   position: absolute;
   width: 59%;
   border-radius: rem(4px);
   background-color: rgba(255, 255, 255, 0.9);
-  opacity: 0;
   transition: 0.3s;
   padding: rem(20px) rem(21px);
 
+  &:hover {
+    display: flex;
+  }
+
   @include tablets {
-    display: none;
     flex-direction: row;
     justify-content: space-between;
     top: 0;
@@ -400,7 +404,7 @@
     left: rem(-10px);
 
     @include tablets {
-      left: 0;
+      left: rem(12px);
     }
   }
 
@@ -408,7 +412,7 @@
     right: rem(-35px);
 
     @include tablets {
-      right: 0;
+      right: rem(-16px);
     }
   }
 }
