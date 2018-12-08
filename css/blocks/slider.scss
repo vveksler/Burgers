@@ -2,11 +2,17 @@
   background: linear-gradient($yellow, #ea8e37, $yellow);
   background-size: cover;
   .container {
-    width: 100%;
+    width: 94%;
   }
   .section__title {
     @include tablets {
       text-align: center;
+    }
+  }
+
+  @include tablets {
+    .container {
+      width: 100%;
     }
   }
 }
@@ -132,6 +138,10 @@
     left: rem(90px);
     padding: rem(13px) rem(18px);
     min-width: rem(245px);
+
+    &:hover {
+      display: none;
+    }
   }
 }
 
@@ -401,7 +411,11 @@
     top: 50%;
   }
   .owl-prev {
-    left: rem(-10px);
+    left: -2%;
+
+    @include laptop {
+
+    }
 
     @include tablets {
       left: rem(12px);
@@ -409,7 +423,11 @@
   }
 
   .owl-next {
-    right: rem(-35px);
+    right: -4.8%;
+
+    @include laptop {
+      
+    }
 
     @include tablets {
       right: rem(-16px);

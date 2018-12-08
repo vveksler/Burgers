@@ -17,6 +17,7 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 21vh;
+  animation: fadeInBurger 1s;
 
   @include laptop {
     padding-left: 0;
@@ -115,4 +116,14 @@
   height: rem(30px);
   transition: 0.3s;
   fill: #fff;
+}
+
+@keyframes fadeInBurger {
+  from {
+    transform: scale(0.6);
+  }
+
+  to {
+    transform: scale(1);
+  }
 }
