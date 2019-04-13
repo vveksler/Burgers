@@ -4,21 +4,16 @@
     $tel = $_POST['user-tel'];
     $street = $_POST['user-street'];
     $house = $_POST['user-house'];
-    $housing = $_POST['user-housing'];
+    $housing = $_POST['user-part'];
     $apart = $_POST['user-apart'];
     $floor = $_POST['user-floor'];
-    $message = $_POST['message'];
-    $pay = $_POST['pay-option'];
+    $message = $_POST['user-message'];
+    $pay = $_POST['payment'];
     
-    $disturb = $_POST['dont-disturb']; // 1 или null
+    $disturb = $_POST['callback']; // 1 или null
     $disturb = isset($disturb) ? 'НЕТ' : 'ДА';
 
     $mail_message = '
-    <html>
-    <head>
-        <title>Заявка</title>
-    </head>
-    <body>
         <h2>Заказ</h2>
         <ul>
             <li>Имя:'.$name.'</li>
@@ -31,13 +26,13 @@
             <li>Комментарий:'.$message.'</li>
             <li>Способ оплаты:'.$pay.'</li>
             <li>Нужно ли перезванивать клиенту:'.$disturb.'</li>
-        </ul>
-    </body>
-    </html>';
+        </ul>';
 
-    $headers = "From: Администратор сайта <http://reyzele.com/burger-landding/>\r\n".
-                "MIME-Version: 1.0" . "\r\n" .
-                "Content-type: text/html; charset=UTF-8" . "\r\n";
+    $from = 'Order';
+    $to = '<vbulka1986@gmail.com>';
+    $headers .= "From: reyzele.com <vbulka1986@gmail.com>\r\n"; 
+    $headers .= "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-type: text/html; charset=UTF-8" . "\r\n";
 
     $mail = mail('vbulka1986@gmail.com', 'Заказ', $mail_message, $headers);
 
@@ -54,3 +49,4 @@
     echo json_encode($data);
 
 ?>
+
