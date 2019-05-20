@@ -16,8 +16,10 @@ $desktop: 1200px;
 @import "_misc/normalize.scss";
 
 //libs
-@import "./libs/fullpage.min.css";
-@import "./libs/owl.carousel.min.css";
+@import "libs/fullpage.min.css";
+@import "libs/owl.carousel.min.css";
+@import "libs/fm.revealator.jquery.min";
+
 // media
 @import "_misc/media";
 

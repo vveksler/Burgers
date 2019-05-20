@@ -1,5 +1,5 @@
 .footer {
-	background: url('../../img/bg/footer.jpg') center bottom no-repeat;
+	background: url('../img/bg/footer.jpg') center bottom no-repeat;
 	background-size: cover;
 	position: absolute;
 	bottom: 0;
@@ -51,7 +51,7 @@
   
   &::before {
     content: "";
-    background-image: url("../../img/icons/phone.svg");
+    background-image: url("../img/icons/phone.svg");
     width: rem(11px);
     height: rem(11px);
     position: absolute;

@@ -49,7 +49,7 @@
   top: rem(-2px);
   left: rem(8px);
   outline: none;
-  background: url(../../img/icons/play.svg) center center no-repeat;
+  background: url(../img/icons/play.svg) center center no-repeat;
 
   &.paused {
     background: none;
@@ -84,7 +84,7 @@
   position: absolute;
   right: rem(112px);
   top: rem(4px);
-  background: url("../../img/icons/volume.svg") center center no-repeat;
+  background: url("../img/icons/volume.svg") center center no-repeat;
   width: rem(30px);
   height: rem(30px);
 

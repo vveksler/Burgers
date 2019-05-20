@@ -38,7 +38,7 @@ $("#fullpage").fullpage({
   css3: false,
   scrollingSpeed: 900,
   fitToSection: false,
-  fitToSectionDelay: 200,
+  fitToSectionDelay: 900,
 
   afterResize: function() {
     checkDevice();

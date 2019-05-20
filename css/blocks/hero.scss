@@ -1,5 +1,5 @@
 .hero {
-  background: url("../../img/bg/hero-bg.png") center center no-repeat;
+  background: url("../img/bg/hero-bg.png") center center no-repeat;
   background-size: cover;
   flex-direction: column;
 
@@ -16,7 +16,6 @@
 .hero__content {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 21vh;
   animation: fadeInBurger 1s;
 
   @include laptop {
@@ -31,7 +30,7 @@
 
 .hero__container {
   display: flex;
-  flex: 1;
+  flex: 0.8;
   flex-direction: column;
   justify-content: center;
   align-items: center;

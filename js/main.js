@@ -91,7 +91,7 @@ function init() {
     },
     {
       iconLayout: "default#image",
-      iconImageHref: "http://burger-landding.reyzele.com/img/map-marker.png",
+      iconImageHref: "./img/map-marker.png",
       iconImageSize: [46, 57],
       iconImageOffset: [-3, -42]
     }
@@ -107,7 +107,7 @@ function init() {
     },
     {
       iconLayout: "default#image",
-      iconImageHref: "http://burger-landding.reyzele.com/img/map-marker.png",
+      iconImageHref: "./img/map-marker.png",
       iconImageSize: [46, 57],
       iconImageOffset: [-3, -42]
     }
@@ -123,7 +123,7 @@ function init() {
     },
     {
       iconLayout: "default#image",
-      iconImageHref: "http://burger-landding.reyzele.com/img/map-marker.png",
+      iconImageHref: "./img/map-marker.png",
       iconImageSize: [46, 57],
       iconImageOffset: [-3, -42]
     }
@@ -139,7 +139,7 @@ function init() {
     },
     {
       iconLayout: "default#image",
-      iconImageHref: "http://burger-landding.reyzele.com/img/map-marker.png",
+      iconImageHref: "./img/map-marker.png",
       iconImageSize: [46, 57],
       iconImageOffset: [-3, -42]
     }
