@@ -4,14 +4,6 @@
   position: relative;
   display: flex;
   overflow: hidden;
-
-  @include tablets {
-    min-height: 1024px;
-  }
-
-  @include phones {
-    min-height: 800px;
-  }
 }
 
 .section__title {

@@ -29,7 +29,6 @@ $("#fullpage").fullpage({
     "map"
   ],
   navigation: true,
-  scrollBar: true,
   navigationPosition: "right",
   showActiveTooltip: true,
   slidesNavigation: false,
@@ -165,7 +164,6 @@ $(".team-acco__trigger").on("click", function(e) {
   $(".team-acco__item").removeClass("active");
   thisItem.classList.add("active");
   $(".team-acco__content").removeAttr("style");
-  thisPanel.style.maxHeight = "fit-content";
 });
 
 // ACORDION SECTION REVIEWS
